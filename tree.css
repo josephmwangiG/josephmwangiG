@@ -1,0 +1,88 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-size: 11px;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    background: white;
+}
+
+.tree{
+    width:100%;
+    height:auto;
+    overflow:hidden;
+    text-align: center;
+}
+
+.tree ul{
+    padding-top: 20px;
+    position: relative;
+    transition: .5s;
+}
+
+.tree li{
+    display: inline-table;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 10px 5px;
+    transition: .5s;
+
+}
+
+.tree li:before, .tree li:after{
+    content: "";
+    position: absolute;
+    top:0;
+    right: 50%;
+    width: 51%;
+    height: 10px;
+    border-top: 1px solid #ccc;
+}
+.tree li:after{
+    right: auto;
+    left: 50%;
+    border-left: 1px solid #ccc;
+}
+.tree li:only-child:after, .tree li:only-child:before{
+    display: none;
+}
+.tree li:only-child{
+    padding-top: 0;
+}
+.tree li:first-child:before, .tree li:last-child:after{
+    border: 0 none;
+}
+.tree li:last-child::before{
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+}
+.tree ul ul:before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 50%;
+    border-left: #ccc solid 1px;
+    height: 20px;
+    width: 0px;
+}
+.tree a{
+    border: 1px solid #ccc;
+    padding:5px;
+    display: inline-grid;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #555;
+}
+.tree a:hover{
+    background: rgb(0, 255, 115);
+    color: white;
+}
